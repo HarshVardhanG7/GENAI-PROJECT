@@ -32,38 +32,39 @@ const Register = () => {
 
   if(loading){
     return(
-      <main>
+      <main className="auth-page">
         <h1>Loading....</h1>
       </main>
     )
   }
 
   return (
-    <main>
+    <main className="auth-page">
       <div className="form-container">
         <h1>Register</h1>
-        {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
+        <p className="auth-subtitle">Create an account to generate personalized interview strategies.</p>
+        {error && <div className="form-error">{error}</div>}
         <form onSubmit={handleSubmit}>
 
            <div className="input-group">
             <label htmlFor="username">Username</label>
             <input 
             onChange={(e)=>setUsername(e.target.value)}
-            type="text" id="username" name="username" placeholder="Enter Username"/>
+            type="text" id="username" name="username" placeholder="Enter Username" autoComplete="username" required/>
           </div>
 
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input 
             onChange={(e)=>setEmail(e.target.value)}
-            type="email" id="email" name="email" placeholder="Enter email address"/>
+            type="email" id="email" name="email" placeholder="Enter email address" autoComplete="email" required/>
           </div>
 
           <div className="input-group">
             <label htmlFor="password">Password</label>
             <input 
             onChange={(e)=>setPassword(e.target.value)}
-            type="password" id="password" name="password" placeholder="Enter password"/>
+            type="password" id="password" name="password" placeholder="Enter password" autoComplete="new-password" required/>
           </div>
 
           <button className='button primary-button'>Register</button>

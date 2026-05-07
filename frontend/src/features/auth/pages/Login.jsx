@@ -32,30 +32,31 @@ const Login = () => {
 
   if(loading){
     return (
-      <main>
+      <main className="auth-page">
         <h1>Loading....</h1>
       </main>
     )
   }
   return (
-    <main>
+    <main className="auth-page">
       <div className="form-container">
         <h1>Login</h1>
-        {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
+        <p className="auth-subtitle">Welcome back! Log in to continue building your interview strategy.</p>
+        {error && <div className="form-error">{error}</div>}
         <form onSubmit={handleSubmit}>
 
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input 
             onChange={(e)=>{setEmail(e.target.value)}}
-            type="email" id="email" name="email" placeholder="Enter email address"/>
+            type="email" id="email" name="email" placeholder="Enter email address" autoComplete="email" required/>
           </div>
 
           <div className="input-group">
             <label htmlFor="password">Password</label>
             <input 
             onChange = {(e)=>(setPassword(e.target.value))}
-            type="password" id="password" name="password" placeholder="Enter password"/>
+            type="password" id="password" name="password" placeholder="Enter password" autoComplete="current-password" required/>
           </div>
 
           <button className='button primary-button'>Login</button>
