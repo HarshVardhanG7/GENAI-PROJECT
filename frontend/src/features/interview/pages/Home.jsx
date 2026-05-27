@@ -204,9 +204,8 @@ const Home = () => {
 
             {/* Page Footer */}
             <footer className='page-footer'>
-                <a href='#'>Privacy Policy</a>
-                <a href='#'>Terms of Service</a>
-                <a href='#'>Help Center</a>
+                <a href='https://example.com/privacy' target='_blank' rel='noopener noreferrer'>Privacy Policy</a>
+                <a href='https://example.com/terms' target='_blank' rel='noopener noreferrer'>Terms of Service</a>
             </footer>
         </div>
     )
